@@ -9,7 +9,7 @@ import tn.esprit.rh.achat.services.IProduitService;
 import java.util.List;
 
 @SpringBootTest
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class) //fait l'ordonnancement des tests
 public class ProduitServiceTest {
 
     @Autowired
