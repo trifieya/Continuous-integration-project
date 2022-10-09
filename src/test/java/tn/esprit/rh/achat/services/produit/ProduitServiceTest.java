@@ -10,14 +10,14 @@ import java.util.List;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class) //fait l'ordonnancement des tests
-public class ProduitServiceTest {
+ class ProduitServiceTest {
 
     @Autowired
     IProduitService ps;
 
     @Test
     @Order(1)
-    public void testRetrieveAllUsers() {
+     void testRetrieveAllUsers() {
         List<Produit> listProduits = ps.retrieveAllProduits();
         Assertions.assertEquals(0, listProduits.size());
     }

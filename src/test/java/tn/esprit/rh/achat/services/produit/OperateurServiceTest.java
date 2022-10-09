@@ -12,51 +12,52 @@ import java.util.List;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class OperateurServiceTest {
+ class OperateurServiceTest {
 
     @Autowired
     IOperateurService os;
 
     @Test
     @Order(1)
-    public void testretrieveAllOperateurs(){
+     void testretrieveAllOperateurs(){
         List<Operateur> listOperateurs = os.retrieveAllOperateurs();
         Assertions.assertEquals(7,listOperateurs.size());
     }
 
     @Test
     @Order(2)
-    public void testretrieveOperateur(){
+     void testretrieveOperateur(){
         Operateur op = os.retrieveOperateur(7L);
         Assertions.assertEquals(7L, op.getIdOperateur().longValue());
     }
 
     @Test
     @Order(3)
-    public void testaddOperateur(){
+     void testaddOperateur(){
         Operateur op =Operateur.builder()
                 .nom("Trifi")
                 .prenom("Eya")
                 .password("root")
                 .build();
         os.addOperateur(op);
+        Assertions.assertEquals(+ 1, os.retrieveAllOperateurs().size());
 
 
     }
 
     @Test
     @Order(4)
-    public void testdeleteOperateur(){
+     void testdeleteOperateur(){
         Operateur op = os.retrieveOperateur(10L);
         os.deleteOperateur(op.getIdOperateur());
         //Assertions.assertEquals(- 1,os.retrieveAllOperateurs().size());
-       // Assertions.assertNull(op);
+        Assertions.assertNull(op.getIdOperateur());
 
     }
 
     @Test
     @Order(5)
-    public void tesupdateOperateur(){
+     void tesupdateOperateur(){
         Operateur op = os.retrieveOperateur(7L);
         op.setPrenom("Lassaad");
         os.updateOperateur(op);
