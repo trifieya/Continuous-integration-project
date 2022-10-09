@@ -21,7 +21,7 @@ public class OperateurServiceTest {
     @Order(1)
     public void testretrieveAllOperateurs(){
         List<Operateur> listOperateurs = os.retrieveAllOperateurs();
-        Assertions.assertEquals(4,listOperateurs.size());
+        Assertions.assertEquals(7,listOperateurs.size());
     }
 
     @Test
@@ -47,10 +47,10 @@ public class OperateurServiceTest {
     @Test
     @Order(4)
     public void testdeleteOperateur(){
-        Operateur op = os.retrieveOperateur(6L);
-        os.deleteOperateur(6L);
+        Operateur op = os.retrieveOperateur(10L);
+        os.deleteOperateur(op.getIdOperateur());
         //Assertions.assertEquals(- 1,os.retrieveAllOperateurs().size());
-        //Assertions.assertNull(op);
+       // Assertions.assertNull(op);
 
     }
 
