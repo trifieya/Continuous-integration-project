@@ -74,7 +74,7 @@ public class StockServiceImpl implements IStockService {
 		String newLine = System.getProperty("line.separator");
 		List<Stock> stocksEnRouge =  stockRepository.retrieveStatusStock();
 		for (int i = 0; i < stocksEnRouge.size(); i++) {
-			finalMessage = newLine + finalMessage + msgDate + newLine + ": le stock "
+			  finalMessage = newLine + finalMessage + msgDate + newLine + ": le stock "
 					+ stocksEnRouge.get(i).getLibelleStock() + " a une quantité de " + stocksEnRouge.get(i).getQte()
 					+ " inférieur à la quantité minimale a ne pas dépasser de " + stocksEnRouge.get(i).getQteMin()
 					+ newLine;
