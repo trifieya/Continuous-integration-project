@@ -61,6 +61,5 @@ public class StockServiceImplMock {
         Stock s1 = stockServiceImpl.addStock(s);
         Assertions.assertNotNull(s1);
     }
-    */
- */
+*/
 }
