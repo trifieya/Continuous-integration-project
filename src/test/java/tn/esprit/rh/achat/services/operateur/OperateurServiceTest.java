@@ -16,23 +16,22 @@ import java.util.List;
 
     @Autowired
     IOperateurService os;
-
 //    @Test
-//    @Order(1)
+//    @Order(2)
 //     void testretrieveAllOperateurs(){
 //        List<Operateur> listOperateurs = os.retrieveAllOperateurs();
-//        Assertions.assertEquals(7,listOperateurs.size());
+//        Assertions.assertEquals(15,listOperateurs.size());
 //    }
 
     @Test
-    @Order(2)
+    @Order(3)
      void testretrieveOperateur(){
         Operateur op = os.retrieveOperateur(7L);
         Assertions.assertEquals(7L, op.getIdOperateur().longValue());
     }
 
     @Test
-    @Order(3)
+    @Order(1)
      void testaddOperateur(){
         Operateur op =Operateur.builder()
                 .nom("Trifi")
@@ -40,20 +39,20 @@ import java.util.List;
                 .password("root")
                 .build();
         os.addOperateur(op);
-       // Assertions.assertEquals(+ 1, os.retrieveAllOperateurs().size());
+        Assertions.assertNotNull(op);
 
 
     }
 
-//    @Test
-//    @Order(4)
-//     void testdeleteOperateur(){
-//        Operateur op = os.retrieveOperateur(10L);
-//        os.deleteOperateur(op.getIdOperateur());
-//        //Assertions.assertEquals(- 1,os.retrieveAllOperateurs().size());
-//        Assertions.assertNull(op.getIdOperateur());
-//
-//    }
+    @Test
+    @Order(4)
+     void testdeleteOperateur(){
+        Operateur op = os.retrieveOperateur(18L);
+        os.deleteOperateur(op.getIdOperateur());
+        //Assertions.assertEquals(- 1,os.retrieveAllOperateurs().size());
+        Assertions.assertNull(os.retrieveOperateur(op.getIdOperateur()));
+
+    }
 
     @Test
     @Order(5)
