@@ -27,7 +27,7 @@ public class StockServiceImplMock {
     StockServiceImpl stockServiceImpl;
 
     Stock s= Stock.builder().libelleStock("stock test").qte(100).qteMin(10).build();
-    List<Stock> listUsers = new ArrayList<Stock>() {
+    List<Stock> listStocks = new ArrayList<Stock>() {
         {
             add(Stock.builder().libelleStock("stock test1").qte(100).qteMin(10).build());
             add(Stock.builder().libelleStock("stock test2").qte(200).qteMin(20).build());
@@ -35,9 +35,32 @@ public class StockServiceImplMock {
     };
 
     @Test
-    public void testRetrieveUser() {
+    public void testRetrieveStock() {
         Mockito.when(stockRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(s));
         Stock s1 = stockServiceImpl.retrieveStock(new Long(2));
         Assertions.assertNotNull(s1);
     }
+
+    @Test
+    public void testAllRetrieveStock() {
+        Mockito.when(stockRepository.findAll()).thenReturn(listStocks);
+        List<Stock> lStocks = stockServiceImpl.retrieveAllStocks();
+        Assertions.assertNotNull(lStocks);
+    }
+
+    @Test
+    public void testAddstock() {
+        Mockito.when(stockRepository.save(s)).thenReturn(s);
+        Stock s1 = stockServiceImpl.addStock(s);
+        Assertions.assertNotNull(s1);
+    }
+/*
+    @Test
+    public void testDeletestock() {
+        Mockito.when(stockRepository.deleteById(Mockito.anyLong())).thenReturn();
+        Stock s1 = stockServiceImpl.addStock(s);
+        Assertions.assertNotNull(s1);
+    }
+    */
+ */
 }
