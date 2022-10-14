@@ -29,7 +29,7 @@ public class OperateurServiceMockito {
 
     @Test
     void testretrieveOperateur(){
-        Mockito.when(operateurRepositoryMock.findById(Mockito.anyLong())).thenReturn(Optional.of(op));
+        Mockito.when(operateurRepositoryMock.findById(Mockito.anyLong())).thenReturn(Optional.of(op)); //find all
         Operateur op1 = operateurService.retrieveOperateur(50L);
         Assertions.assertNotNull(op1);
 
