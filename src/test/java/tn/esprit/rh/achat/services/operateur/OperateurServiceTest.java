@@ -16,19 +16,6 @@ import java.util.List;
 
     @Autowired
     IOperateurService os;
-//    @Test
-//    @Order(2)
-//     void testretrieveAllOperateurs(){
-//        List<Operateur> listOperateurs = os.retrieveAllOperateurs();
-//        Assertions.assertEquals(15,listOperateurs.size());
-//    }
-
-    @Test
-    @Order(3)
-     void testretrieveOperateur(){
-        Operateur op = os.retrieveOperateur(7L);
-        Assertions.assertEquals(7L, op.getIdOperateur().longValue());
-    }
 
     @Test
     @Order(1)
@@ -44,25 +31,7 @@ import java.util.List;
 
     }
 
-    @Test
-    @Order(4)
-     void testdeleteOperateur(){
-        Operateur op = os.retrieveOperateur(30L);
-        os.deleteOperateur(op.getIdOperateur());
-        //Assertions.assertEquals(- 1,os.retrieveAllOperateurs().size());
-        Assertions.assertNull(os.retrieveOperateur(op.getIdOperateur()));
-
-    }
-
-    @Test
-    @Order(5)
-     void tesupdateOperateur(){
-        Operateur op = os.retrieveOperateur(7L);
-        op.setPrenom("Lassaad");
-        os.updateOperateur(op);
-        Assertions.assertEquals("Lassaad", op.getPrenom());
-
-    }
+   
 
 
 
