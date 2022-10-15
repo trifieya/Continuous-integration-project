@@ -47,7 +47,7 @@ import java.util.List;
     @Test
     @Order(4)
      void testdeleteOperateur(){
-        Operateur op = os.retrieveOperateur(29L);
+        Operateur op = os.retrieveOperateur(30);
         os.deleteOperateur(op.getIdOperateur());
         //Assertions.assertEquals(- 1,os.retrieveAllOperateurs().size());
         Assertions.assertNull(os.retrieveOperateur(op.getIdOperateur()));
