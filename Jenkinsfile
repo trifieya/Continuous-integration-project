@@ -26,9 +26,9 @@ pipeline{
 
          stage('SonarQube Analysis'){
                 steps {
-                    sh """mvn -f /var/lib/jenkins/workspace/sonar/pom.xml sonar:sonar -DskipTests \
+                    sh """mvn sonar:sonar -DskipTests \
                             
-                            -Dsonar.projectKey=org.springframework.boot \
+                            
                             -Dsonar.sourceEncoding=UTF-8 \
                             -Dsonar.language=java \
                             -Dsonar.host.url=http://192.168.1.124:9000 
