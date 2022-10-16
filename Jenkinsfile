@@ -11,9 +11,15 @@ pipeline{
                 
             }
       
-      stage('BUILD'){
+      stage('Clean'){
             steps {
-                sh 'mvn clean install -DskipTests'
+                sh 'mvn clean '
+            }
+            
+        }
+        stage('Compile'){
+            steps {
+                sh 'mvn compile -DskipTests'
             }
             
         }
