@@ -16,51 +16,63 @@ import java.util.List;
 
     @Autowired
     IOperateurService os;
-//    @Test
-//    @Order(2)
-//     void testretrieveAllOperateurs(){
-//        List<Operateur> listOperateurs = os.retrieveAllOperateurs();
-//        Assertions.assertEquals(15,listOperateurs.size());
-//    }
+    @Test
+    @Order(2)
+     void testretrieveAllOperateurs(){
+       int listOperateur = os.retrieveAllOperateurs().size();
+        List<Operateur> listOperateurs = os.retrieveAllOperateurs();
+        Assertions.assertEquals(listOperateur,listOperateurs.size());
+    }
 
     @Test
     @Order(3)
      void testretrieveOperateur(){
-        Operateur op = os.retrieveOperateur(7L);
-        Assertions.assertEquals(7L, op.getIdOperateur().longValue());
+       Operateur op = os.addOperateur(Operateur.builder()
+               .nom("Hamdi")
+               .prenom("Wedi")
+               .password("root")
+               .build());
+        Assertions.assertEquals(op.getIdOperateur() , os.retrieveOperateur(op.getIdOperateur()).getIdOperateur()) ;
     }
 
     @Test
     @Order(1)
      void testaddOperateur(){
-        Operateur op =Operateur.builder()
+        Operateur op = os.addOperateur(Operateur.builder()
                 .nom("Trifi")
                 .prenom("Eya")
                 .password("root")
-                .build();
-        os.addOperateur(op);
+                .build());
         Assertions.assertNotNull(op);
 
 
     }
 
-//    @Test
-//    @Order(4)
-//     void testdeleteOperateur(){
-//        Operateur op = os.retrieveOperateur(29L);
-//        os.deleteOperateur(op.getIdOperateur());
-//        //Assertions.assertEquals(- 1,os.retrieveAllOperateurs().size());
-//        Assertions.assertNull(os.retrieveOperateur(op.getIdOperateur()));
-//
-//    }
-
     @Test
     @Order(5)
+     void testdeleteOperateur(){
+       Operateur op = os.addOperateur(Operateur.builder()
+               .nom("Maria")
+               .prenom("Trifi")
+               .password("root")
+               .build());
+        os.deleteOperateur(op.getIdOperateur());
+        //Assertions.assertEquals(- 1,os.retrieveAllOperateurs().size());
+        Assertions.assertNull(os.retrieveOperateur(op.getIdOperateur()));
+
+    }
+
+    @Test
+    @Order(4)
      void tesupdateOperateur(){
-        Operateur op = os.retrieveOperateur(7L);
-        op.setPrenom("Lassaad");
+       Operateur op = os.addOperateur(Operateur.builder()
+               .nom("Noura")
+               .prenom("Trifi")
+               .password("root")
+               .build());
+        op.setPrenom("Nounou");
         os.updateOperateur(op);
-        Assertions.assertEquals("Lassaad", op.getPrenom());
+        Assertions.assertEquals("Nounou", os.updateOperateur(op).getPrenom());
 
     }
 
