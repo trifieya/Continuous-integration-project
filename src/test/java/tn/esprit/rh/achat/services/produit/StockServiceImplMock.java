@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import tn.esprit.rh.achat.entities.Stock;
 import tn.esprit.rh.achat.repositories.StockRepository;
 import tn.esprit.rh.achat.services.IStockService;
@@ -53,8 +54,17 @@ public class StockServiceImplMock {
         Mockito.when(stockRepository.save(s)).thenReturn(s);
         Stock s1 = stockServiceImpl.addStock(s);
         Assertions.assertNotNull(s1);
+
     }
+//somme text for testing
 /*
+
+    @Test
+    public void DeleteParty() throws Exception{
+        Mockito.when(stockRepository).andExpect(MockMvcResultMatchers
+                .status().isOk());
+    }
+
     @Test
     public void testDeletestock() {
         Mockito.when(stockRepository.deleteById(Mockito.anyLong())).thenReturn();
