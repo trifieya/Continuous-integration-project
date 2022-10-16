@@ -31,7 +31,9 @@ pipeline{
                             -Dsonar.projectKey=org.springframework.boot \
                             -Dsonar.sourceEncoding=UTF-8 \
                             -Dsonar.language=java \
-                            -Dsonar.host.url=http://192.168.1.124:9000
+                            -Dsonar.host.url=http://192.168.1.124:9000 \
+                            -Dsonar.login=admin
+                            -Dsonar.password=admin1
                     """
                 }
                 
