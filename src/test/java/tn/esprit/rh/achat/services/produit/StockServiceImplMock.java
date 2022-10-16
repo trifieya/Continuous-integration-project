@@ -56,6 +56,7 @@ public class StockServiceImplMock {
         Assertions.assertNotNull(s1);
 
     }
+//somme text for testing
 /*
 
     @Test
