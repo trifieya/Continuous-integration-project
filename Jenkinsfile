@@ -26,7 +26,7 @@ pipeline{
 
          stage('SonarQube Analysis'){
                 steps {
-                    sh """mvn sonar:sonar -DskipTests \
+                    sh """mvn -f /var/lib/jenkins/workspace/sonar/pom.xml sonar:sonar -DskipTests \
                             
                             -Dsonar.projectKey=org.springframework.boot \
                             -Dsonar.sourceEncoding=UTF-8 \
