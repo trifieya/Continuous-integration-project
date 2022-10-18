@@ -6,7 +6,7 @@ pipeline{
     stages {
         stage('Getting project from Git') {
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/facture']], browser: [$class: 'https://github.com/trifieya/Continuous-integration-project.git'], extensions: [], userRemoteConfigs: [[credentialsId: '18558545-93a9-448f-bf74-85184c601676', url: 'https://github.com/trifieya/Continuous-integration-project.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/factureT']], browser: [$class: 'https://github.com/trifieya/Continuous-integration-project.git'], extensions: [], userRemoteConfigs: [[credentialsId: 'ab438ba39290186d90891614a45727f05f3d5408', url: 'https://github.com/trifieya/Continuous-integration-project.git']]])
             }
         }
         
@@ -34,7 +34,7 @@ pipeline{
         stage('Code Quality Check via SonarQube') {
             steps{
                 
-             sh "        mvn sonar:sonar   -Dsonar.projectKey=sonar   -Dsonar.host.url=http://localhost:9000   -Dsonar.login=2f5dd4b45317c102726a2173f6956acfcbd4fc20"
+             sh "        mvn sonar:sonar   -Dsonar.projectKey=sonar   -Dsonar.host.url=http://localhost:9000   -Dsonar.login=ab438ba39290186d90891614a45727f05f3d5408"
             }
         }
         
