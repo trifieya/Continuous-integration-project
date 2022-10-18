@@ -62,10 +62,21 @@ public class OperateurServiceMockito {
 
 
 
+    @Test
+    public void tesupdateOperateur() {
+        op.setPrenom("Hamdi");
+        Mockito.when(operateurRepositoryMock.save(op)).thenReturn(op);
+        Operateur op1 = operateurService.updateOperateur(op);
+        Assertions.assertEquals(op.getPrenom(),op1.getPrenom());
 
+    }
 
+    @Test
+    public void testdeleteOperateur() {
+        Operateur op2 = Operateur.builder().nom("Miral").prenom("Trifi").password("root").build();
+        operateurService.deleteOperateur(op2.getIdOperateur());
+        Mockito.verify(operateurRepositoryMock).deleteById(op2.getIdOperateur());
 
-
-
+    }
 
 }
