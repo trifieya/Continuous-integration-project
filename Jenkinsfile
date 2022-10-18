@@ -53,6 +53,23 @@ pipeline{
         
         
         
+        stage('email'){
+ 
+            steps {
+
+                    mail bcc: '', 
+                        body: ''' Bonjour Samar,
+                                  le pipeline a correctement marché
+                                  Cordialement''', 
+                        cc: '', 
+                        from: '',
+                        replyTo: '',
+                        subject: 'Mailing CI', 
+                        to: 'samar.belhadj@esprit.tn'
+    
+ }}
+        
+        
         
 
         
