@@ -17,7 +17,7 @@ import java.util.List;
 
     @Test
     @Order(1)
-    public void testRetrieveAllUsers() {
+     void testRetrieveAllUsers() {
         List<Produit> listProduits = ps.retrieveAllProduits();
         Assertions.assertEquals(0, listProduits.size());
     }

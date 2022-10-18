@@ -20,7 +20,7 @@ import java.util.List;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-public class OperateurServiceMockito {
+ class OperateurServiceMockito {
     @Mock
     OperateurRepository operateurRepositoryMock;
     @InjectMocks
@@ -46,7 +46,7 @@ public class OperateurServiceMockito {
 
     }
     @Test
-    public void testaddOperateur() {
+     void testaddOperateur() {
         Mockito.when(operateurRepositoryMock.save(op)).thenReturn(op);
         Operateur op1 = operateurService.addOperateur(op);
         Assertions.assertNotNull(op1);
@@ -54,7 +54,7 @@ public class OperateurServiceMockito {
     }
 
     @Test
-    public void testretrieveAllOperateurs() {
+     void testretrieveAllOperateurs() {
         Mockito.when(operateurRepositoryMock.findAll()).thenReturn(listOperateurs);
         List<Operateur> listOp = operateurService.retrieveAllOperateurs();
         Assertions.assertNotNull(listOp);
@@ -63,7 +63,7 @@ public class OperateurServiceMockito {
 
 
     @Test
-    public void tesupdateOperateur() {
+     void tesupdateOperateur() {
         op.setPrenom("Hamdi");
         Mockito.when(operateurRepositoryMock.save(op)).thenReturn(op);
         Operateur op1 = operateurService.updateOperateur(op);
@@ -72,7 +72,7 @@ public class OperateurServiceMockito {
     }
 
     @Test
-    public void testdeleteOperateur() {
+     void testdeleteOperateur() {
         Operateur op2 = Operateur.builder().nom("Miral").prenom("Trifi").password("root").build();
         operateurService.deleteOperateur(op2.getIdOperateur());
         Mockito.verify(operateurRepositoryMock).deleteById(op2.getIdOperateur());
