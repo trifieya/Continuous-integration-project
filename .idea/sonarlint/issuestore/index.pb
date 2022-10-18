@@ -3,6 +3,8 @@ u
 Esrc/main/java/tn/esprit/rh/achat/controllers/OperateurController.java,0\8\0838eba035a4a00bc4399334e0a63ea173835699
 w
 Gsrc/main/java/tn/esprit/rh/achat/controllers/ProduitRestController.java,4\4\44049d0dceb7e63b9cff4011ee7654aee115e79c
+|
+Lsrc/main/java/tn/esprit/rh/achat/controllers/CategorieProduitController.java,c\1\c1a89e2c5d5f3966bce3e096d96c2d018b79d69f
 w
 Gsrc/main/java/tn/esprit/rh/achat/controllers/FactureRestController.java,f\0\f07e983b8d6f4bc3e16b7e2a5dbd872211ecc664
 {
@@ -15,6 +17,8 @@ p
 @src/main/java/tn/esprit/rh/achat/services/IReglementService.java,2\1\21b559dd87ec8014aec658148a748e382c321ef1
 p
 @src/main/java/tn/esprit/rh/achat/services/IOperateurService.java,2\9\294617bd11cdd2595aea33d92c998d9eedc7422c
+u
+Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217e1a178510d28a7fc03ee4626b1821fa022bd
 w
 Gsrc/main/java/tn/esprit/rh/achat/services/ICategorieProduitService.java,d\d\dd23b1c70350973455a886481065a955cd3a730f
 n
@@ -35,14 +39,10 @@ r
 Bsrc/main/java/tn/esprit/rh/achat/services/IFournisseurService.java,b\5\b5dbda1b8bc28baaf0376387981046f49138ac80
 q
 Asrc/main/java/tn/esprit/rh/achat/services/FactureServiceImpl.java,a\c\ac68ecddc0b282080251b254f5c490208d467cc0
-y
-Isrc/main/java/tn/esprit/rh/achat/services/SecteurActiviteServiceImpl.java,3\2\32b3d8f077f3fcf4a5b9c9bb14cf0639da0bf07d
 s
 Csrc/main/java/tn/esprit/rh/achat/entities/CategorieFournisseur.java,3\5\35d48a2e7f6c16ed909bb72fd4105500e957b4cb
 o
 ?src/main/java/tn/esprit/rh/achat/entities/CategorieProduit.java,9\a\9ae45bcb50bc63be86a9b117995c406add4209b8
-l
-<src/main/java/tn/esprit/rh/achat/services/IStockService.java,8\f\8fb7acc6bc4b1fa83f73fe2e618701eb76ae29a3
 v
 Fsrc/main/java/tn/esprit/rh/achat/services/ISecteurActiviteService.java,0\9\09b7c0d8453e9701a5abb0c1138c8ad523c1a367
 f
@@ -63,6 +63,11 @@ h
 8src/main/java/tn/esprit/rh/achat/entities/Reglement.java,c\2\c22269e0381fa873b71249357fc21699e21412ad
 q
 Asrc/main/java/tn/esprit/rh/achat/util/SpringFoxSwaggerConfig.java,4\0\40dd8c0f636f8b623b1826dfd9e4eb242c77c2ff
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 z
 Jsrc/main/java/tn/esprit/rh/achat/repositories/DetailFactureRepository.java,7\2\726836a6f2860416cbc8f87355a16c8ec5956462
 r
@@ -83,3 +88,5 @@ x
 Hsrc/main/java/tn/esprit/rh/achat/repositories/FournisseurRepository.java,e\8\e84fb4f6df39fd9b1e67a9ff92c68dd1519cd1d1
 v
 Fsrc/main/java/tn/esprit/rh/achat/repositories/OperateurRepository.java,e\e\ee864decccdf3fd5043789335958ee86d578e39b
+d
+4src/main/java/tn/esprit/rh/achat/entities/Stock.java,a\5\a5c49a5cefc42bc70e4059187de7e58eb40bff0f
