@@ -13,12 +13,12 @@ import java.util.List;
  class ProduitServiceTest {
 
     @Autowired
-    IProduitService ps;
+    IProduitService produitServiceImpl;
 
     @Test
     @Order(1)
-     void testRetrieveAllUsers() {
-        List<Produit> listProduits = ps.retrieveAllProduits();
+    public void testRetrieveAllUsers() {
+        List<Produit> listProduits = produitServiceImpl.retrieveAllProduits();
         Assertions.assertEquals(0, listProduits.size());
     }
 
