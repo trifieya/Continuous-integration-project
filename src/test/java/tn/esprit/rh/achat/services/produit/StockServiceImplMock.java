@@ -56,20 +56,11 @@ public class StockServiceImplMock {
         Assertions.assertNotNull(s1);
 
     }
-//somme text for testing
-/*
 
-    @Test
-    public void DeleteParty() throws Exception{
-        Mockito.when(stockRepository).andExpect(MockMvcResultMatchers
-                .status().isOk());
-    }
 
     @Test
     public void testDeletestock() {
-        Mockito.when(stockRepository.deleteById(Mockito.anyLong())).thenReturn();
-        Stock s1 = stockServiceImpl.addStock(s);
-        Assertions.assertNotNull(s1);
+        stockServiceImpl.deleteStock(2L);
+        Mockito.verify(stockRepository, Mockito.times(1)).deleteById(2L);
     }
-*/
 }
