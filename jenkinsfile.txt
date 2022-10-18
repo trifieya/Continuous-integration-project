@@ -6,7 +6,7 @@ pipeline{
     stages {
         stage('Getting project from Git') {
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/factureT']], browser: [$class: 'https://github.com/trifieya/Continuous-integration-project.git'], extensions: [], userRemoteConfigs: [[credentialsId: 'ab438ba39290186d90891614a45727f05f3d5408', url: 'https://github.com/trifieya/Continuous-integration-project.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/factureT']], browser: [$class: 'https://github.com/trifieya/Continuous-integration-project.git'], extensions: [], userRemoteConfigs: [[ url: 'https://github.com/trifieya/Continuous-integration-project.git']]])
             }
         }
         
