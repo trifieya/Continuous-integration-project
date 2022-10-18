@@ -23,7 +23,7 @@ import java.util.Optional;
 public class StockServiceImplMock {
     @Mock
     StockRepository stockRepository;
-
+//test
     @InjectMocks
     StockServiceImpl stockServiceImpl;
 
