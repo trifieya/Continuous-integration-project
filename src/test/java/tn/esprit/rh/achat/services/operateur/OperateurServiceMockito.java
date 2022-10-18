@@ -26,7 +26,8 @@ import java.util.List;
     @InjectMocks
     OperateurServiceImpl operateurService;
 
-    Operateur op = Operateur.builder().nom("Eyaa").prenom("Trifi").password("root").build();
+
+    Operateur op = Operateur.builder().nom("Eyaaaaaa").prenom("Trifi").password("root").build();
     List<Operateur> listOperateurs = new ArrayList<Operateur>(){
         {
             add(Operateur.builder().nom("Amina").prenom("Trifi").password("root").build());
