@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>tn.esprit.rh</groupId>
 	<artifactId>achat</artifactId>
-	<version>1.1</version>
+	<version>1.5</version>
 	<name>achat</name>
 	<description>Projet pour le module DevOps</description>
 	<properties>
@@ -53,6 +53,15 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>3.0.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.9.0</version>
+			<scope>test</scope>
+		</dependency>
+
 
 	</dependencies>
 
@@ -79,13 +88,11 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.1.0</version>
 			</plugin>
-
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -105,6 +112,9 @@
 				</executions>
 			</plugin>
 		</plugins>
+
+
+
 	</build>
 
 </project>
