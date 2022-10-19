@@ -24,6 +24,15 @@ stage ('UNIT Testing'){
             sh 'mvn verify -DskipUnitTests'
         }
         }
+        
+          stage ('SONARQUEBE'){
+        steps {
+            
+           withSonarQubeEnv(credentialsId: 'sonar-api') {
+  
+}
+        }
+        }
 
 
   }
