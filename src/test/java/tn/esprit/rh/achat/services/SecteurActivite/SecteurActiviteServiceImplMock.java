@@ -48,20 +48,19 @@ public class SecteurActiviteServiceImplMock {
 	Assertions.assertNotNull(s1);
 	
 	System.out.println(s1); 
-	System.out.println("Retrieve Secteur Activite is working ");  
-
+	
 	}
 	@Test
 	public void AddSecteurActiviteTest()
 	{
 
-		SecteurActivite secteur2 = new SecteurActivite(null,"06000","EQUIPEMENTS ET FOURNITURES DU BUREAU",null);
-		secteur2.setIdSecteurActivite(2L);
+		SecteurActivite s2 = new SecteurActivite(null,"22222","INFORMATIQUE",null);
+		s2.setIdSecteurActivite(2L);
 		
-		SecteurService.addSecteurActivite(secteur2);
-		verify(SecteurRepository, times(1)).save(secteur2);
-		System.out.println(secteur2); 
-		System.out.println(" Add Secteur Activite Fournisseur is working ");  
+		SecteurService.addSecteurActivite(s2);
+		verify(SecteurRepository, times(1)).save(s2);
+		System.out.println(s2); 
+		
 	}
 	@Test
 	public void getAllSecteursTest()
@@ -76,7 +75,7 @@ public class SecteurActiviteServiceImplMock {
 		when(SecteurService.retrieveAllSecteurActivite()).thenReturn(SecteurList);
 		List<SecteurActivite> sList = SecteurService.retrieveAllSecteurActivite();
 		assertEquals(3, sList.size());
-		System.out.println(" Retrieve all Secteur is working ");  
+		
 	
 	}
 	
@@ -92,7 +91,7 @@ public class SecteurActiviteServiceImplMock {
 	verify(SecteurRepository).deleteById(secteur1.getIdSecteurActivite());
 	
 	System.out.println(secteur1);
-	System.out.println(" Delete is working ");  
+	
 	}
 	
 	
