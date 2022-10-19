@@ -48,11 +48,11 @@ public class SecteurActiviteServiceImplTest {
 	SecteurActivite sec = secteurService.retrieveSecteurActivite(2L);
 	assertEquals(2L, sec.getIdSecteurActivite().longValue());
 	}
-//@Test
-	//@Order(4)
-	//public void testDeleteSectuer() {
-		////secteurService.deleteSecteurActivite(10L);
-		//assertNull(secteurService.deleteSecteurActivite(10L));
-	//}
+        @Test
+	@Order(4)
+	public void testDeleteSectuer() {
+	secteurService.deleteSecteurActivite(2L);
+	assertNull(secteurService.deleteSecteurActivite(2L));
+	}
 
 }
