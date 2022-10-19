@@ -7,11 +7,7 @@ pipeline{
         git branch: 'fatima', url: 'https://github.com/trifieya/Continuous-integration-project.git'
     }
     }
-        stage ('COMPLILING') {
-    steps {
-        sh 'mvn compile'
-    }
-}
+       
 stage ('SONARQUBE') {
     steps {
         sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
