@@ -9,8 +9,15 @@ pipeline{
     }
         stage ('UNIT Testing'){
         steps {
-            echo "getting project from git " ;
+           
             sh 'mvn test'
+        }
+        }
+          
+           stage ('Integration Test'){
+        steps {
+            
+            sh 'mvn verify -DskipUnitTests'
         }
         }
 
