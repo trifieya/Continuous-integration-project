@@ -16,24 +16,19 @@ stage ('UNIT Testing'){
         }
         }
 
-
-
-           stage ('Integration Test'){
-        steps {
-            
-            sh 'mvn verify -DskipUnitTests'
-        }
-        }
-        
-          stage ('SONARQUEBE'){
-        steps {
-            
-           withSonarQubeEnv(credentialsId: 'sonar-api') {
-               sh 'mvn clean package sonar:sonar'
-  
+ stage ('COMPLILING') {
+    steps {
+        sh 'mvn compile'
+    }
 }
-        }
-        }
+stage ('SONARQUBE') {
+    steps {
+        sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
+    }
+} 
+
+          
+        
 
 
   }
