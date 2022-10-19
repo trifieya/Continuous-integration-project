@@ -65,7 +65,7 @@ pipeline{
                         from: '',
                         replyTo: '',
                         subject: 'Mailing CI', 
-                        to: 'samar.belhadj9@gmail.com'
+                        to: 'testtest1999sam@gmail.com'
     
  }}
         
