@@ -7,19 +7,8 @@ pipeline{
         git branch: 'fatima', url: 'https://github.com/trifieya/Continuous-integration-project.git'
     }
     }
-        stage ('UNIT Testing'){
-        steps {
-           
-            sh 'mvn test'
-        }
-        }
+        
           
-           stage ('Integration Test'){
-        steps {
-            
-            sh 'mvn verify -DskipUnitTests'
-        }
-        }
         
           stage ('Maven Build'){
         steps {
