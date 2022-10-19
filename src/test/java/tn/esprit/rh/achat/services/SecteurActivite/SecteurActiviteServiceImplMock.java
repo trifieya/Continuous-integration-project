@@ -1,5 +1,4 @@
-
-package tn.esprit.rh.achat.Tests;
+package tn.esprit.rh.achat.services.SecteurActivite;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

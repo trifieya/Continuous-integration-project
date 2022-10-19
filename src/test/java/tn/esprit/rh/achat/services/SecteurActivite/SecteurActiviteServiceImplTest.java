@@ -1,5 +1,4 @@
-
-package tn.esprit.rh.achat.Tests;
+package tn.esprit.rh.achat.services.SecteurActivite;
 
 
 import static org.junit.Assert.assertNull;
@@ -9,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import java.text.ParseException;
 import java.util.List;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -19,6 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import tn.esprit.rh.achat.entities.SecteurActivite;
 import tn.esprit.rh.achat.repositories.SecteurActiviteRepository;
 import tn.esprit.rh.achat.services.ISecteurActiviteService;
+import tn.esprit.rh.achat.services.SecteurActiviteServiceImpl;
 
 
 @TestMethodOrder(OrderAnnotation.class)
@@ -38,15 +39,6 @@ public class SecteurActiviteServiceImplTest {
 	}
 	
 	
-	
-	
-	@Test
-	@Order(2)
-	public void testAddSecteur() throws ParseException {
-	
-	SecteurActivite sa = SecteurActiviteServiceImpl.addSecteurActivite(SecteurActivite.builder().codeSecteurActivite("00000").libelleSecteurActivite("TEST").build());
-	Assertions.assertNotNull(s);
-	}
 	
 	
 
