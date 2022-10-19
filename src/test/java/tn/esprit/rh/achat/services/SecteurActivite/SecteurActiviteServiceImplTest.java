@@ -52,7 +52,7 @@ public class SecteurActiviteServiceImplTest {
 	@Order(4)
 	public void testDeleteSectuer() {
 	secteurService.deleteSecteurActivite(2L);
-	assertNull(secteurService.deleteSecteurActivite(2L));
+	assertNull(secteurService.retrieveSecteurActivite(2L));
 	}
 
 }
