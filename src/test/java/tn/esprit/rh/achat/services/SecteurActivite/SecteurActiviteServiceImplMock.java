@@ -40,14 +40,14 @@ public class SecteurActiviteServiceImplMock {
 	@Test
 	public void RetrieveSecteurActiviteTest() {
 		
-		SecteurActivite secteurAc1 = new SecteurActivite(1L, "02000","MOBILIER DE BUREAU",null);
-		secteurAc1.setIdSecteurActivite(1L);
+		SecteurActivite s1 = new SecteurActivite(1L, "02000","MOBILIER DE BUREAU",null);
+		s1.setIdSecteurActivite(1L);
 		
-	Mockito.when(SecteurRepository.findById(1L)).thenReturn(Optional.of(secteurAc1));
+	Mockito.when(SecteurRepository.findById(1L)).thenReturn(Optional.of(s1));
 	SecteurService.retrieveSecteurActivite(1L);
-	Assertions.assertNotNull(secteurAc1);
+	Assertions.assertNotNull(s1);
 	
-	System.out.println(secteurAc1); 
+	System.out.println(s1); 
 	System.out.println("Retrieve Secteur Activite is working ");  
 
 	}
