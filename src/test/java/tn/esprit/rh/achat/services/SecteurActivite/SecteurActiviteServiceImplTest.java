@@ -49,11 +49,11 @@ public class SecteurActiviteServiceImplTest {
 	assertEquals(2L, sec.getIdSecteurActivite().longValue());
 	}
 	
-        @Test
-	@Order(4)
-	public void testDeleteSectuer() {
-	secteurService.deleteSecteurActivite(2L);
-	Assertions.assertNull(secteurService.retrieveSecteurActivite(2L));
-	}
+       // @Test
+	//@Order(4)
+	//public void testDeleteSectuer() {
+	//secteurService.deleteSecteurActivite(2L);
+	//Assertions.assertNull(secteurService.retrieveSecteurActivite(2L));
+	//}
 
 }
