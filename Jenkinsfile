@@ -14,6 +14,22 @@ stage ('SONARQUBE') {
     }
 } 
     
+stage ('UNIT Testing'){
+        steps {
+           
+            sh 'mvn test'
+        }
+        }
+
+
+
+           stage ('Integration Test'){
+        steps {
+            
+            sh 'mvn verify -DskipUnitTests'
+        }
+        }
+
 
   }
 }
