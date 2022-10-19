@@ -63,9 +63,6 @@ h
 8src/main/java/tn/esprit/rh/achat/entities/Reglement.java,c\2\c22269e0381fa873b71249357fc21699e21412ad
 q
 Asrc/main/java/tn/esprit/rh/achat/util/SpringFoxSwaggerConfig.java,4\0\40dd8c0f636f8b623b1826dfd9e4eb242c77c2ff
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 z
