@@ -68,9 +68,9 @@ public class SecteurActiviteServiceImplMock {
 		List<SecteurActivite> SecteurList = new ArrayList<SecteurActivite>() {
 
 			{
-		add(new SecteurActivite(null,"07000","ÉQUIPEMENTS ET FOURNITURES DE CAFÉTÉRIA",null));
-		add(new SecteurActivite(null,"08000","ÉQUIP. – FOURN. D'ENTRETIEN TECHNIQUE",null));
-		add(new SecteurActivite(null,"09000","ÉQUIP INFORMATIQUE",null));
+		add(new SecteurActivite(null,"33333","CASANIER",null));
+		add(new SecteurActivite(null,"44444","ECOLIER",null));
+		add(new SecteurActivite(null,"55555","AGRICOLE",null));
 			}};	
 		when(SecteurService.retrieveAllSecteurActivite()).thenReturn(SecteurList);
 		List<SecteurActivite> sList = SecteurService.retrieveAllSecteurActivite();
@@ -82,15 +82,15 @@ public class SecteurActiviteServiceImplMock {
 	@Test
 	public void DeleteSecteurTest(){
 
-	SecteurActivite secteur1 = new SecteurActivite(null,"07000","ÉQUIPEMENTS ET FOURNITURES DE CAFÉTÉRIA",null);
-	secteur1.setIdSecteurActivite(7L);
+	SecteurActivite se1 = new SecteurActivite(null,"33333","CASANIER",null);
+	se1.setIdSecteurActivite(7L);
 	
-	Mockito.lenient().when(SecteurRepository.findById(secteur1.getIdSecteurActivite())).thenReturn(Optional.of(secteur1));
+	Mockito.lenient().when(SecteurRepository.findById(se1.getIdSecteurActivite())).thenReturn(Optional.of(se1));
 
 	SecteurService.deleteSecteurActivite(7L);
-	verify(SecteurRepository).deleteById(secteur1.getIdSecteurActivite());
+	verify(SecteurRepository).deleteById(se1.getIdSecteurActivite());
 	
-	System.out.println(secteur1);
+	System.out.println(se1);
 	
 	}
 	
