@@ -11,19 +11,19 @@ pipeline{
             steps {
                 sh 'mvn clean '
             }
-            
+
         }
-        
+
          stage('Compile'){
             steps {
                 sh 'mvn compile -DskipTests'
             }
-            
+
         }
 
 stage ('UNIT Testing'){
         steps {
-           
+
             sh 'mvn test'
         }
         }
@@ -33,23 +33,23 @@ stage ('UNIT Testing'){
                 steps {
                     sh """mvn sonar:sonar -DskipTests \
                             -Dsonar.language=java \
-                            -Dsonar.host.url=http://192.168.1.15:9000 
-                            
+                            -Dsonar.host.url=http://192.168.1.15:9000
+
                     """
                 }
-                
+
             }
-        
-        
-        
-        
+
+
+
+
         stage('Nexus'){
             steps{
                 sh 'mvn deploy -DskipTests'
             }
         }
-          
-        
+
+
 
 
   }
