@@ -45,7 +45,7 @@ pipeline{
             steps {
                 script {
                    
-configFileProvider([configFile(fileId: '2ffcc728-c37e-4996-95c9-2c496e55fc5a', variable: 'sonar')])  {
+configFileProvider([configFile(fileId: '51445502-2dae-4e17-a9ce-b8c0688153e1', variable: 'sonar')]) {
   sh 'mvn  -B -DskipTests deploy -s $sonar'}
                
                 }
