@@ -41,10 +41,13 @@ public class StockServiceImpl implements IStockService {
 	}
 
 	@Override
-	public void deleteStock(Long stockId) {
+	public int deleteStock(Long stockId) {
 		log.info("In method deleteStock");
 		stockRepository.deleteById(stockId);
-
+		if(stockRepository.findById(stockId)==null){
+			return 1;
+		}
+		return 0;
 	}
 
 	@Override
