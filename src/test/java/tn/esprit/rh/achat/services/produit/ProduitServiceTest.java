@@ -9,8 +9,8 @@ import tn.esprit.rh.achat.services.IProduitService;
 import java.util.List;
 
 @SpringBootTest
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class ProduitServiceTest {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class) //fait l'ordonnancement des tests
+ class ProduitServiceTest {
 
     @Autowired
     IProduitService produitServiceImpl;
@@ -21,6 +21,8 @@ public class ProduitServiceTest {
         List<Produit> listProduits = produitServiceImpl.retrieveAllProduits();
         Assertions.assertEquals(0, listProduits.size());
     }
+
+
 
 
 }

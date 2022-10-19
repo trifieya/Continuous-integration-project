@@ -10,7 +10,7 @@ public interface IStockService {
 
 	Stock addStock(Stock s);
 
-	void deleteStock(Long id);
+	int deleteStock(Long id);
 
 	Stock updateStock(Stock u);
 
