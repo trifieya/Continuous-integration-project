@@ -35,7 +35,7 @@ pipeline{
         stage('Code Quality Check via SonarQube') {
             steps{
                
-             sh "        mvn sonar:sonar   -Dsonar.projectKey=sonar   -Dsonar.host.url=http://localhost:9000   -Dsonar.login=f650f31a3b9e9acb6a2caba0c5c41758567964c7"
+             sh "        mvn sonar:sonar   -Dsonar.projectKey=final    -Dsonar.host.url=http://localhost:9000   -Dsonar.login=f650f31a3b9e9acb6a2caba0c5c41758567964c7"
             }
         }
        
