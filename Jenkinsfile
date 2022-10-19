@@ -29,16 +29,12 @@ stage ('UNIT Testing'){
         }
 
 
-  stage('SonarQube Analysis'){
-                steps {
-                    sh """mvn sonar:sonar -DskipTests \
-                            -Dsonar.language=java \
-                            -Dsonar.host.url=http://192.168.1.15:9000
+  stage ('SONARQUBE') {
+    steps {
+        sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
+    }
+} 
 
-                    """
-                }
-
-            }
 
 
 
