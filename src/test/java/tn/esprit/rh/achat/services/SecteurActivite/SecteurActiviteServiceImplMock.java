@@ -40,7 +40,7 @@ public class SecteurActiviteServiceImplMock {
 	@Test
 	public void RetrieveSecteurActiviteTest() {
 		
-		SecteurActivite s1 = new SecteurActivite(1L, "11111","MOBILIER DE BUREAU",null);
+		SecteurActivite s1 = new SecteurActivite(1L, "11111","BUREATIQUE",null);
 		s1.setIdSecteurActivite(1L);
 		
 	Mockito.when(SecteurRepository.findById(1L)).thenReturn(Optional.of(s1));
