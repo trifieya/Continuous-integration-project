@@ -33,7 +33,22 @@ public class SecteurActiviteServiceImplTest {
 	public void testRetrieveAllSecteur() {
 		List<SecteurActivite> allSActivite = secteurService.retrieveAllSecteurActivite();
 		assertEquals(0, allSActivite.size());
+		
+		
 	}
+	
+	
+	
+	
+	@Test
+	@Order(2)
+	public void testAddSecteur() throws ParseException {
+	
+	SecteurActivite sa = SecteurActiviteServiceImpl.addSecteurActivite(SecteurActivite.builder().codeSecteurActivite("00000").libelleSecteurActivite("TEST").build());
+	Assertions.assertNotNull(s);
+	}
+	
+	
 
 	//@Test
 	//@Order(2)
