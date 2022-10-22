@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - /home/mysql/data:/var/lib/mysql
+
+  spring_app:
+    image: app
+    container_name: amine-pi
+    restart: on-failure
+    ports:
+      - 8000:8000
+    depends_on:
+      - mysqldb
