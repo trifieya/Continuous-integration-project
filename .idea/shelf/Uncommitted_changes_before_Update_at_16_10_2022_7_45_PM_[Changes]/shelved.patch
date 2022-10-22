@@ -1,0 +1,27 @@
+Index: src/main/java/tn/esprit/rh/achat/services/FournisseurServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package tn.esprit.rh.achat.services;\r\n\r\nimport lombok.extern.slf4j.Slf4j;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Service;\r\nimport tn.esprit.rh.achat.entities.DetailFournisseur;\r\nimport tn.esprit.rh.achat.entities.Fournisseur;\r\nimport tn.esprit.rh.achat.entities.SecteurActivite;\r\nimport tn.esprit.rh.achat.repositories.DetailFournisseurRepository;\r\nimport tn.esprit.rh.achat.repositories.FournisseurRepository;\r\nimport tn.esprit.rh.achat.repositories.ProduitRepository;\r\nimport tn.esprit.rh.achat.repositories.SecteurActiviteRepository;\r\n\r\nimport java.util.Date;\r\nimport java.util.List;\r\n\r\n@Service\r\n@Slf4j\r\npublic class FournisseurServiceImpl implements IFournisseurService {\r\n\r\n\t@Autowired\r\n\tFournisseurRepository fournisseurRepository;\r\n\t@Autowired\r\n\tDetailFournisseurRepository detailFournisseurRepository;\r\n\t@Autowired\r\n\tProduitRepository produitRepository;\r\n\t@Autowired\r\n\tSecteurActiviteRepository secteurActiviteRepository;\r\n\r\n\t@Override\r\n\tpublic List<Fournisseur> retrieveAllFournisseurs() {\r\n\t\tList<Fournisseur> fournisseurs = (List<Fournisseur>) fournisseurRepository.findAll();\r\n\t\tfor (Fournisseur fournisseur : fournisseurs) {\r\n\t\t\tlog.info(\" fournisseur : \" + fournisseur);\r\n\t\t}\r\n\t\treturn fournisseurs;\r\n\t}\r\n\r\n\r\n\tpublic Fournisseur addFournisseur(Fournisseur f /*Master*/) {\r\n\t\tDetailFournisseur df= new DetailFournisseur();//Slave\r\n\t\tdf.setDateDebutCollaboration(new Date()); //util\r\n\t\t//On affecte le \"Slave\" au \"Master\"\r\n\t\tf.setDetailFournisseur(df);\t\r\n\t\tfournisseurRepository.save(f);\r\n\t\treturn f;\r\n\t}\r\n\t\r\n\tprivate DetailFournisseur  saveDetailFournisseur(Fournisseur f){\r\n\t\tDetailFournisseur df = f.getDetailFournisseur();\r\n\t\tdetailFournisseurRepository.save(df);\r\n\t\treturn df;\r\n\t}\r\n\r\n\tpublic Fournisseur updateFournisseur(Fournisseur f) {\r\n\t\tDetailFournisseur df = saveDetailFournisseur(f);\r\n\t\tf.setDetailFournisseur(df);\t\r\n\t\tfournisseurRepository.save(f);\r\n\t\treturn f;\r\n\t}\r\n\r\n\t@Override\r\n\tpublic void deleteFournisseur(Long fournisseurId) {\r\n\t\tfournisseurRepository.deleteById(fournisseurId);\r\n\r\n\t}\r\n\r\n\t@Override\r\n\tpublic Fournisseur retrieveFournisseur(Long fournisseurId) {\r\n\r\n\t\tFournisseur fournisseur = fournisseurRepository.findById(fournisseurId).orElse(null);\r\n\t\treturn fournisseur;\r\n\t}\r\n\r\n\t@Override\r\n\tpublic void assignSecteurActiviteToFournisseur(Long idSecteurActivite, Long idFournisseur) {\r\n\t\tFournisseur fournisseur = fournisseurRepository.findById(idFournisseur).orElse(null);\r\n\t\tSecteurActivite secteurActivite = secteurActiviteRepository.findById(idSecteurActivite).orElse(null);\r\n        fournisseur.getSecteurActivites().add(secteurActivite);\r\n        fournisseurRepository.save(fournisseur);\r\n\t\t\r\n\t\t\r\n\t}\r\n\r\n\t\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/tn/esprit/rh/achat/services/FournisseurServiceImpl.java b/src/main/java/tn/esprit/rh/achat/services/FournisseurServiceImpl.java
+--- a/src/main/java/tn/esprit/rh/achat/services/FournisseurServiceImpl.java	(revision 0d107222e8e4024a14770891a26e9a5c194b1dc9)
++++ b/src/main/java/tn/esprit/rh/achat/services/FournisseurServiceImpl.java	(date 1665945838661)
+@@ -68,13 +68,13 @@
+ 	@Override
+ 	public Fournisseur retrieveFournisseur(Long fournisseurId) {
+ 
+-		Fournisseur fournisseur = fournisseurRepository.findById(fournisseurId).orElse(null);
+-		return fournisseur;
++
++		return fournisseurRepository.findById(fournisseurId).get();
+ 	}
+ 
+ 	@Override
+ 	public void assignSecteurActiviteToFournisseur(Long idSecteurActivite, Long idFournisseur) {
+-		Fournisseur fournisseur = fournisseurRepository.findById(idFournisseur).orElse(null);
++		Fournisseur fournisseur = fournisseurRepository.findById(idFournisseur).get();
+ 		SecteurActivite secteurActivite = secteurActiviteRepository.findById(idSecteurActivite).orElse(null);
+         fournisseur.getSecteurActivites().add(secteurActivite);
+         fournisseurRepository.save(fournisseur);
