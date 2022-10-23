@@ -1,26 +1,24 @@
-version: "3.3"
+version: "3.4"
 
 services:
-  mysqldb:
+  mysql-container4:
     container_name: mysql-container4
     ports:
-      - '3307:3306'
-    image: mysql:latest
+      - '3306:3306'
+    environment:
+      - MYSQL_DATABASE=1
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
     restart: always
     volumes:
-      - /home/vagrant/dbd:/var/lib/mysql:rw
-    user: mysql
-    environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
-      - MYSQL_DATABASE=achatdb
-
-  spring_app:
-    image: eyatrifii/achatexamen
-    container_name: achatproject
-    ports:
-      - 8089:8089
-    environment:
-      - jdbc:mysql://localhost:3306/achatdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+      - mysql-container4:/var/lib/mysql:rw
+    image: 'mysql:latest'
+  achat-backend:
     depends_on:
-      - mysqldb
-    restart: on-failure
+      - mysql-container4
+    container_name: achat-backend
+    ports:
+      - '8089:8089'
+    image: eyatrifii/achat-backend
+
+volumes:
+  mysql-container4: { }
