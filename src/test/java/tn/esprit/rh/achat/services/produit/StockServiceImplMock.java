@@ -1,3 +1,5 @@
+
+/*
 package tn.esprit.rh.achat.services.produit;
 
 import org.junit.jupiter.api.Assertions;
@@ -72,3 +74,4 @@ public class StockServiceImplMock {
         Mockito.verify(stockRepository, Mockito.times(1)).deleteById(s.getIdStock());
     }
 }
+*/
