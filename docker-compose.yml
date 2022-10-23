@@ -13,11 +13,13 @@ services:
     volumes:
       - /home/mysql/data:/var/lib/mysql:rw
     image: 'mysql:latest'
-  achatback:
-    container_name: achatback
+  achat-back:
+    depends_on:
+      - mysql-container3
+    container_name: achat-back
     ports:
       - '8089:8089'
-    image: achatback
+    image: farahayari/achat-back
 
 volumes:
-  mysql_data_container3: {}
+  /home/mysql/data: { }
