@@ -1,0 +1,25 @@
+version: "3.3"
+
+services:
+  mysqldb:
+    container_name: mysql-container4
+    ports:
+      - '3307:3306'
+    image: mysql:latest
+    restart: always
+    volumes:
+      - ./dbexamen:/var/lib/mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_DATABASE=achatdb
+
+  spring_app:
+    image: eyatrifii/achatexamen
+    container_name: achatproject
+    ports:
+      - 8089:8089
+    environment:
+      - jdbc:mysql://localhost:3306/achatdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    depends_on:
+      - mysqldb
+    restart: on-failure
