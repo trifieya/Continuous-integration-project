@@ -10,4 +10,3 @@ ENV APP /app
 RUN mkdir $APP
 WORKDIR $APP
 COPY . .
-RUN mvn -s settings.xml
