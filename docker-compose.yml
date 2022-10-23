@@ -9,6 +9,7 @@ services:
     restart: always
     volumes:
       - ./dbexamen:/var/lib/mysql
+    user: mysql
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_DATABASE=achatdb
