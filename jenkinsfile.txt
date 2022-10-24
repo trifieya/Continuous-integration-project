@@ -29,28 +29,29 @@ pipeline{
             }
         }
        
-       
-       
-       
-        stage('Code Quality Check via SonarQube') {
-            steps{
-               
-             sh "        mvn sonar:sonar   -Dsonar.projectKey=final    -Dsonar.host.url=http://localhost:9000   -Dsonar.login=f650f31a3b9e9acb6a2caba0c5c41758567964c7"
-            }
-        }
-       
-
-     
-        stage('Publish to Nexus') {
+       stage('Docker build')
+        {
             steps {
-                script {
-                   
-configFileProvider([configFile(fileId: '51445502-2dae-4e17-a9ce-b8c0688153e1', variable: 'sonar')]) {
-  sh 'mvn  -B -DskipTests deploy -s $sonar'}
-               
-                }
+                 sh 'docker build -t mariam1212121121/projet  .'
             }
         }
+        stage('Docker login')
+        {
+            steps {
+                sh 'echo $dockerhub_PSW | docker login -u $dockerhub_USR -p $dockerhub_PSW'
+            }    
+       
+        }
+      stage('Push') {
+
+			steps {
+				sh 'docker push mariam1212121121/projet'
+			}
+		}
+       
+       
+       
+   
        
        
 
