@@ -18,6 +18,8 @@ public class StockServiceTest {
     @Autowired
     IStockService StockServiceImpl;
 
+
+    //test ajout stoc
     @Test
     @Order(1)
     public void testSaveStock(){
