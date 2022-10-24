@@ -39,6 +39,15 @@ dockerhub=credentials('docker')
 			}
 		}
 		
+      stage('DockerCompose') {
+        
+                       steps {
+                                sh 'cd /var/lib/jenkins/workspace/tpfinal'
+				sh 'docker-compose up -d'
+                        }
+                          
+        }
+		
 
     }    
 }
