@@ -1,4 +1,4 @@
 FROM openjdk:11
 EXPOSE 8082
-ADD target/springprojet.jar springprojet.jar
-ENTRYPOINT ["java","-jar","/springprojet.jar"]
+ADD target/tpAchatProject-1.0.jar tpAchatProject-1.0.jar
+ENTRYPOINT ["java","-jar","/tpAchatProject-1.0.jar"]
