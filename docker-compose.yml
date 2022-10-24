@@ -27,7 +27,7 @@ services:
     container_name: achat-front
     ports:
       - '9090:9090'
-    image: farahayari/achatfront
+    image: farahayari/achat-front
 
 volumes:
   mysql-container3: { }
