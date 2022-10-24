@@ -48,6 +48,14 @@ pipeline{
 				sh 'docker push mariam1212121121/projet'
 			}
 		}
+       stage('DockerCompose') {
+        
+                       steps {
+                                sh 'cd /var/lib/jenkins/workspace/tpfinal'
+				sh 'docker-compose up -d'
+                        }
+                          
+        }
        
        
        
