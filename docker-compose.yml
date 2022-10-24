@@ -1,0 +1,24 @@
+version: "3"
+services:
+  mysql-standalone:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=tpachato
+      - MYSQL_PASSWORD=root
+    ports:
+      - 3306:3306
+
+  achatproject:
+    image: mariam1212121121/projet
+    ports:
+      - 8089:8089
+    restart: unless-stopped
+    environment :
+      -SPRING_DATASOURCE_URL: jdbc:mysql://mysql-standalone:3306/tpachato?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+      -SPRING_DATASOURCE_USERNAME : root
+      -SPRING_DATASOURCE_PASSWORD : root
+    depends_on:
+      - mysql-standalone
+    links:
+      - mysql-standalone:mysql-standalone
