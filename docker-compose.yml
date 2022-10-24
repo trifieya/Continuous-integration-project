@@ -21,5 +21,13 @@ services:
       - '8089:8089'
     image: farahayari/achat-back
 
+  achat-front:
+    depends_on:
+      - achat-back
+    container_name: achat-front
+    ports:
+      - '4200:4200'
+    image: farahayari/achatfront
+
 volumes:
   mysql-container3: { }
