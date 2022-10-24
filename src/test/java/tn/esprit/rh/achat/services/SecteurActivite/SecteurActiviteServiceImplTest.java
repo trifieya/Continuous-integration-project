@@ -1,4 +1,4 @@
-/*package tn.esprit.rh.achat.services.SecteurActivite;
+package tn.esprit.rh.achat.services.SecteurActivite;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -62,4 +62,4 @@ import tn.esprit.rh.achat.services.SecteurActiviteServiceImpl;
     //Assertions.assertNull(secteurService.retrieveSecteurActivite(2L));
     //}
 
-}*/
+}
