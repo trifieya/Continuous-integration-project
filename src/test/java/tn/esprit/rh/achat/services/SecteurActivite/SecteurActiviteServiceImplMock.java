@@ -1,4 +1,4 @@
-/*package tn.esprit.rh.achat.services.SecteurActivite;
+package tn.esprit.rh.achat.services.SecteurActivite;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -96,4 +96,4 @@ import java.util.Optional;
 
 
 
-}*/
+}
