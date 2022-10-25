@@ -20,6 +20,9 @@ services:
       - '8089:8089'
     image: eyatrifii/achat-backend
   angularpart:
+    depends_on:
+      - achat-backend
+    container_name: achat-frontend
     image: eyatrifii/achat-frontend
     ports:
       - '4200:80'
