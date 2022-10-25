@@ -21,8 +21,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SpringFoxSwaggerConfig {
+	
+	
+		@Bean
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2)
 
-	public static final String AUTHORIZATION_HEADER = "Authorization";
+				.select()
+				.apis(RequestHandlerSelectors.any())
+				.paths(PathSelectors.any())
+				.build();
+
+	}
+
+	/*public static final String AUTHORIZATION_HEADER = "Authorization";
 
 	@Bean
 	public Docket api() {
@@ -61,5 +73,5 @@ public class SpringFoxSwaggerConfig {
 		authorizationScopes[0] = authorizationScope;
 		return Arrays.asList(new SecurityReference("Bearer", authorizationScopes)); 
 
-	}
+	}*/
 }
