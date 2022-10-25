@@ -17,7 +17,7 @@ pipeline{
        stage('Docker build')
         {
             steps {
-                 sh 'docker build -t mariam1212121121/projet11  .'
+                 sh 'docker build -t mariam1212121121/projet  .'
             }
         }
         stage('Docker login')
@@ -30,7 +30,7 @@ pipeline{
       stage('Push') {
 
 			steps {
-				sh 'docker push mariam1212121121/projet11'
+				sh 'docker push mariam1212121121/projet'
 			}
 		}
        stage('DockerCompose') {
