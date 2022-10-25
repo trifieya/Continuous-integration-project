@@ -19,6 +19,10 @@ services:
     ports:
       - '8089:8089'
     image: eyatrifii/achat-backend
+  angularpart:
+    image: eyatrifii/achat-frontend
+    ports:
+      - '4200:80'
 
 volumes:
   mysql-container4: { }
