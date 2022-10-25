@@ -29,7 +29,7 @@ public class SecteurActiviteServiceImplTest {
 	ISecteurActiviteService secteurService;
 	
 
-	@Test
+	/*@Test
 	@Order(1)
 	public void testRetrieveAllSecteur() {
 		List<SecteurActivite> allSActivite = secteurService.retrieveAllSecteurActivite();
@@ -37,7 +37,7 @@ public class SecteurActiviteServiceImplTest {
 		
 		
 	}
-	
+	*/
 	
 	
 	
@@ -49,12 +49,12 @@ public class SecteurActiviteServiceImplTest {
     // SecteurActivite savedSecteur = secteurService.addSecteurActivite(sa);
 	//	assertEquals(sa.getlibelleSecteurActivite(), savedSecteur.getlibelleSecteurActivite());
 //}
-	@Test
+	/*@Test
 	@Order(3)
 	public void testRetrieveSecteur() {
 	SecteurActivite sec = secteurService.retrieveSecteurActivite(2L);
 	assertEquals(2L, sec.getIdSecteurActivite().longValue());
-	}
+	}*/
 	
        // @Test
 	//@Order(4)
