@@ -1,33 +1,31 @@
 version: "3.4"
 
 services:
-  mysqldb:
-    container_name: mysqldb
-    image: 'mysql:latest'
-    user: root
-    restart: unless-stopped
+  mysql-container4:
+    container_name: mysql-container4
     ports:
-      - '3308:3306'
+      - '3306:3306'
     environment:
-      MYSQL_DATABASE: achatdb
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      - MYSQL_DATABASE=1
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    restart: always
     volumes:
-      - mysqldb:/var/lib/mysql:rw
-
-
-  springapp:
-    image: fatimaabdawa1/projet
-    container_name: springapp
-    restart: on-failure
-    environment:
-      -SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/achatdb?useUnicode=yes&&useJDBCCompliantTimezoneShift=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-    volumes:
-      - .m2:/root/.m2
+      - mysql-container4:/var/lib/mysql:rw
+    image: 'mysql:latest'
+  achat-backend:
+    depends_on:
+      - mysql-container4
+    container_name: achat-backend
     ports:
       - '8089:8089'
+    image: fatimaabdawa1/projet
+  angularpart:
     depends_on:
-      - mysqldb
-
+      - achat-backend
+    container_name: achat-frontend
+    image: fatimaabdawa1/achat-frontend
+    ports:
+      - '4200:80'
 
 volumes:
-  mysqldb: { }
+  mysql-container4: { }
