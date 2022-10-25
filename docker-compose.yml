@@ -26,7 +26,7 @@ services:
       - achat-back
     container_name: achat-front
     ports:
-      - '80:4200'
+      - '4200:80'
     image: farahayari/achat-front
 
 volumes:
