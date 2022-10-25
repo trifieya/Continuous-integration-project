@@ -28,13 +28,7 @@ services:
     depends_on:
       - mysqldb
       
-       depends_on:
-      -  springapp
-    container_name: achat-frontend
-    image: fatimaabdawa1/achat-frontend
-    ports:
-      - '4200:80'
-
+    
 
 volumes:
   mysqldb: { }
