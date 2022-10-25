@@ -31,7 +31,7 @@ pipeline{
             }
         }
 
-         /*stage('SonarQube Analysis'){
+         stage('SonarQube Analysis'){
                 steps {
                     sh """mvn sonar:sonar -DskipTests \
                             -Dsonar.language=java \
@@ -40,7 +40,7 @@ pipeline{
                     """
                 }
                 
-            }*/
+            }
         
         
         
