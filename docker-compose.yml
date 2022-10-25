@@ -21,7 +21,7 @@ services:
     image: fatimaabdawa1/projet
   angularpart:
     depends_on:
-      - achat-backend
+      - projet
     container_name: achat-frontend
     image: fatimaabdawa1/achat-frontend
     ports:
