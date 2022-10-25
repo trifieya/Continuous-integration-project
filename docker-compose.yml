@@ -16,7 +16,7 @@ services:
 
 
   springapp:
-    image: fatimaabdawa1/achat
+    image: fatimaabdawa1/projet
     container_name: springapp
     restart: on-failure
     environment:
