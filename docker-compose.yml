@@ -3,7 +3,7 @@ version: "3.4"
 services:
   mysqldb:
     container_name: mysqldb
-    image: 'mysql:latest'
+    image: mysql:latest
     user: root
     restart: unless-stopped
     ports:
