@@ -47,4 +47,6 @@ services:
 
 
 volumes:
-  mysqldb: { }
+  mysqldb:
+networks:
+  this:
