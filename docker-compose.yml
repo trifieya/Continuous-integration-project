@@ -28,6 +28,15 @@ services:
     depends_on:
       - mysqldb
       
+       angularapp:
+   image: fatimaabdawa1/achat-angular
+   container_name: angularapp
+   restart: on-failure
+   ports:
+     - 4200:80
+   depends_on:
+     - springapp
+      
     
 
 volumes:
