@@ -13,8 +13,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
       - mysqldb:/var/lib/mysql:rw
-    networks:
-      - this
+    
 
 
   springapp:
@@ -29,8 +28,7 @@ services:
       - 8089:8089
     depends_on:
       - mysqldb
-    networks:
-      - this
+    
       
       
   angularapp:
@@ -41,12 +39,8 @@ services:
      - 4200:80
    depends_on:
      - springapp
-   networks:
-      - this
-  
 
 
 volumes:
   mysqldb:
-networks:
-  this:
+
