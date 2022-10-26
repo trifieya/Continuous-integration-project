@@ -5,7 +5,3 @@ RUN curl -u admin:admin -o achat-1.0.jar "http://192.168.1.124:8081/repository/m
 ENTRYPOINT ["java","-jar","/achat-1.0.jar"]
 EXPOSE 8089
 
-#COPY target/*.jar app.jar
-#ENTRYPOINT ["java","-jar","/app.jar"]
-#COPY is a docker file command that copies files from a local source location to a destination in the Docker container.
-#ADD command is used to copy files/directories into a Docker image
