@@ -19,6 +19,8 @@ services:
     image: samarbelhadj/achat
     container_name: springapp
     restart: on-failure
+    environment:
+      -SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/achatdb?useUnicode=yes&&useJDBCCompliantTimezoneShift=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     volumes:
       - .m2:/root/.m2
     ports:
