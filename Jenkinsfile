@@ -35,7 +35,7 @@ pipeline{
                 steps {
                     sh """mvn sonar:sonar -DskipTests \
                             -Dsonar.language=java \
-                            -Dsonar.host.url=http://192.168.1.124:9000 
+                            -Dsonar.host.url=http://192.168.1.13:9000 
                             
                     """
                 }
